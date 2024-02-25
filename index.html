@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ScholarLink - Scholarship Suggestions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>ScholarLink - Search scholarship for you</h1>
+    <form id="scholarshipForm">
+      <div class="form-group">
+        <label for="domain">Domain of Scholarship:</label>
+        <select id="domain" name="domain">
+            <option value="Education">Education</option>
+            <option value="Research">Research</option>
+            <option value="Entrepreneurship">Entrepreneurship</option>
+            <option value="Other">Other</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="educationField">Education Field:</label>
+        <select id="educationField" name="educationField">
+            <option value="Engineering">Engineering</option>
+            <option value="Medical">Medical</option>
+            <option value="Civil Servises">Civil Servises</option>
+            <option value="Other">Other</option>
+          </select>
+      </div>
+      <div class="form-group">
+        <label for="Study year">Study year:</label>
+        <select id="gender" name="gender">
+          <option value="FY">FY</option>
+          <option value="SY">SY</option>
+          <option value="TY">TY</option>
+          <option value="Btech">Btech</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="gender">Gender:</label>
+        <select id="gender" name="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+     
+      <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" id="category" name="category">
+      </div>
+      <div class="form-group">
+        <label for="annualIncome">Annual Income:</label>
+        <input type="number" id="annualIncome" name="annualIncome">
+      </div>
+      <button type="submit">Find Scholarships</button>
+    </form>
+    <div id="results"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
