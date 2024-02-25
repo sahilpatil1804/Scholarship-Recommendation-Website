@@ -7,12 +7,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="styles.css">
     <title>Hello, world!</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Scholify</a>
+        <a class="navbar-brand" href="#">ScholarLink</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -45,9 +45,7 @@
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
           </form>
           <div class="mx-2">
-            <button class="btn btn-success type="button" data-toggle="modal" data-target="#loginModal"">Login
-            </button>
-            <button class="btn btn-success" type="button" data-toggle="modal" data-target="#signupModal">Signup
+            <button class="btn btn-success type="button" data-toggle="modal" data-target="#applyModal"">Apply
             </button>
           </div>
         </div>
@@ -62,7 +60,7 @@
           <div class="carousel-item active">
             <img src="..\images\im2.png" class="d-block w-100" alt="...">
             <div class="carousel-caption d-none d-md-block">
-              <h4>Welcome to Scholify!</h4>
+              <h4>Welcome to ScholarLink!</h4>
               <p>A platform to help students apply for various scholarships.</p>
             </div>
           </div>
@@ -90,9 +88,73 @@
           <span class="sr-only">Next</span>
         </a>
       </div>
+
+      <div class="modal fade" id="applyModal" tabindex="-1" role="dialog" aria-labelledby="applyModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="applyModalLabel">Apply</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form id="scholarshipForm">
+                <div class="form-group">
+                  <label for="domain">Domain of Scholarship:</label>
+                  <select id="domain" name="domain">
+                      <option value="Education">Education</option>
+                      <option value="Research">Research</option>
+                      <option value="Entrepreneurship">Entrepreneurship</option>
+                      <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="educationField">Education Field:</label>
+                  <select id="educationField" name="educationField">
+                      <option value="Engineering">Engineering</option>
+                      <option value="Medical">Medical</option>
+                      <option value="Civil Servises">Civil Servises</option>
+                      <option value="Other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                  <label for="Study year">Study year:</label>
+                  <select id="gender" name="gender">
+                    <option value="FY">FY</option>
+                    <option value="SY">SY</option>
+                    <option value="TY">TY</option>
+                    <option value="Btech">Btech</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="gender">Gender:</label>
+                  <select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="category">Category:</label>
+                  <input type="text" id="category" name="category">
+                </div>
+                <div class="form-group">
+                  <label for="annualIncome">Annual Income:</label>
+                  <input type="number" id="annualIncome" name="annualIncome">
+                </div>
+                <button id="applyButton" type="submit">Find Scholarships</button>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
       <!--Login-->
   
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+  <!-- <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -124,42 +186,8 @@
         </div>
       </div>
     </div>
-  </div>
-      <!--Signup-->
-  
-  <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="signupModalLabel">Sign Up</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-            <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1">
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Confirm Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                <button type="submit" class="btn btn-primary">Register</button>
-              </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
+  </div> -->
+     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
