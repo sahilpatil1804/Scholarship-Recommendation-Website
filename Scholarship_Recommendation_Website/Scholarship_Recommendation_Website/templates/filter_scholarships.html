@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Filtered Scholarships</title>
+</head>
+<body>
+
+<h1>Filtered Scholarships</h1>
+
+{% if filters %}
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Sr No</th>
+                <th>Scholarship Name</th>
+                <th>Minorities</th>
+                <th>Education</th>
+                <th>Grades in Prev Exam</th>
+                <th>Annual Income</th>
+                <th>Disabilities</th>
+                <th>Armed Forces</th>
+                <th>Sports Person</th>
+                <th>Link</th>
+                <th>Amount Provided</th>
+                <th>Funded By</th>
+                <th>Gender</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for scholarship in filters.values %}
+                <tr>
+                    <td>{{ scholarship.Sr_No }}</td>
+                    <td>{{ scholarship.Scholarship_Name }}</td>
+                    <td>{{ scholarship.Minorities }}</td>
+                    <td>{{ scholarship.Education }}</td>
+                    <td>{{ scholarship.Annual_Income }}</td>
+                    <td>{{ scholarship.Sports_Person }}</td>
+                    <td><a href="{{ scholarship.Link }}" target="_blank">Link</a></td>
+                    <td>{{ scholarship.Amount_Provided }}</td>
+                    <td>{{ scholarship.Funded_By }}</td>
+                    <td>{{ scholarship.Gender }}</td>
+                    <td>{{ scholarship.Country }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No scholarships found based on the provided filters.</p>
+{% endif %}
+
+</body>
+</html>
